@@ -1,0 +1,43 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Iterator Interface declares the methods needed for traversing the collection.
+
+2 - Each concrete Iterator traverse the collection in it's own way and is respossible for tracking the progress.
+
+3 - The Collection Interface defines the basic methods for a Iterable Collection, include one method for creating a Iterator for that collection.
+
+4 - The Concrete Colections must have a method for returning a Concrete Iterator.
+
+5 - Since the Interface for both Iterators and Collections will expected by the Client it can work with any Collection or Iterator that inplements one of those Interfaces.</help_text><element><id>UMLClass</id><coordinates><x>390</x><y>220</y><w>140</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Iterator
+--
++ getNext(): void
++ hasMore(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>350</y><w>270</w><h>100</h></coordinates><panel_attributes>ConcreteIterator
+--
+- collection: IterableCollection
+--
++ ConcreteIterator(collection: IterableCollection) 
++ getNext(): void
++ hasMore(): boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>290</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>220</y><w>160</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+IterableCollection
+--
++ createIterator(): Iterator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>350</y><w>170</w><h>100</h></coordinates><panel_attributes>ConcreteCollection
+--
+- collection: IterableCollection
+--
+...
++ createIterator(): Iterator
+...</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>280</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>130</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>370</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;-&gt;</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>150</x><y>140</y><w>130</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;10;10;110;10</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>140</y><w>130</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>110;80;110;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>260</y><w>180</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>160;10;10;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>510</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>570</x><y>330</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>60</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>50</x><y>330</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>340</x><y>100</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+5</panel_attributes><additional_attributes></additional_attributes></element></diagram>

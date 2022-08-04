@@ -1,0 +1,58 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Component Classes are the one that contains the business logic, every component has a mediator object that follows the mediator interface, allowing the mediator to be changed.
+
+2 - The Mediator interface defines the commom methods for notifing al Mediator, usually just one method that receives the notifier as an argument.
+
+3 - The cencrete meditor implements the mediator interface an matains e reference of all the objects it manages.
+
+4 - The components must be blind to other components and any relationship between them must be handled by the mediator.</help_text><element><id>UMLClass</id><coordinates><x>260</x><y>180</y><w>130</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Mediator
+--
++ notify(sender): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>110</y><w>170</w><h>90</h></coordinates><panel_attributes>ComponentA
+--
+- mediator: Mediator
+--
++ ComponentA(m: Mediator)
++ operationA(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>240</y><w>170</w><h>90</h></coordinates><panel_attributes>ComponentB
+--
+- mediator: Mediator
+--
++ ComponentB(m: Mediator)
++ operationB(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>110</y><w>170</w><h>90</h></coordinates><panel_attributes>ComponentC
+--
+- mediator: Mediator
+--
++ ComponentC(m: Mediator)
++ operationC(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>430</x><y>240</y><w>170</w><h>90</h></coordinates><panel_attributes>ComponentD
+--
+- mediator: Mediator
+--
++ ComponentD(m: Mediator)
++ operationD(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>160</y><w>70</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;30;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>220</y><w>70</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>220</y><w>70</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;50;30</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>160</y><w>70</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;30;50;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>250</x><y>360</y><w>140</w><h>180</h></coordinates><panel_attributes>ConcreteMediator
+--
+- compA: ComponentA
+- compB: ComponentB
+- compC: ComponentC
+- compD: ComponentD
+--
++ notify(sender): void
++ reactOnA(): void
++ reactOnB(): void
++ reactOnC(): void
++ reactOnD(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>240</y><w>30</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLClass</id><coordinates><x>270</x><y>60</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>80</y><w>30</w><h>120</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>160</y><w>270</w><h>340</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+bg=white</panel_attributes><additional_attributes>10;320;250;320;250;10;220;10</additional_attributes></element><element><id>Relation</id><coordinates><x>591</x><y>290</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>10</x><y>160</y><w>260</w><h>340</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;
+bg=white</panel_attributes><additional_attributes>240;320;10;320;10;10;40;10</additional_attributes></element><element><id>Relation</id><coordinates><x>10</x><y>280</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>493</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>343</x><y>150</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>373</x><y>340</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>483</x><y>460</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=1
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>113</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>435</x><y>370</y><w>150</w><h>30</h></coordinates><panel_attributes>this.mediator.notify(this)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>515</x><y>320</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element></diagram>

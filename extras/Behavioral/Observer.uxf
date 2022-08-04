@@ -1,0 +1,71 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Publisher is resposinble for executing some business logic and alerting other objects of that execution.
+
+2 - The Publisher alerts other objects throught it's subscription list.
+
+3 - The Subscriber interface defines the methods the Publisher can use to notify other objects of a change in state.
+
+4 - The concrete subscribers are the classes that executes the business logic.
+
+5 - The publisher can pass some contextual data to it's subscripers to help with the update.
+
+6 - The client must create publishers and subscribers separately.</help_text><element><id>UMLClass</id><coordinates><x>490</x><y>190</y><w>110</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Subscriber
+--
++ public(context)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>480</x><y>310</y><w>140</w><h>80</h></coordinates><panel_attributes>layer=1
+bg=#282A36
+transparency=0
+group=1
+ConcreteSubscriber
+--
+...
+--
++ update(context)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>250</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>170</y><w>220</w><h>140</h></coordinates><panel_attributes>Publisher
+--
+- subscribers: Subscriber[]
+- mainState
+--
++ subscribe(subscriber: Subscriber)
++ unsubscribe(subscriber: Subscriber)
++ notifySubscribers()
++ mainBusinessLogic()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>410</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>330</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>130;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>300</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>230</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>190</x><y>140</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>500</x><y>330</y><w>140</w><h>80</h></coordinates><panel_attributes>layer=0
+group=1
+ConcreteSubscriber
+--
+...
+--
++ update(context)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>610</x><y>380</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=2
+5</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>610</x><y>290</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=2
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>580</x><y>170</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>270</x><y>340</y><w>180</w><h>50</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+layer=1
+s = new ConcreteSubscriber()
+this.publisher.subscribe(s)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>260</x><y>420</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+6</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>210</y><w>190</w><h>60</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+layer=1
+foreach (s in this.subscribers) {
+    s.update(this)
+}</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>40</x><y>290</y><w>140</w><h>50</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+layer=1
+mainState = newState
+notifySubscribers()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>179</x><y>240</y><w>50</w><h>50</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;30;30</additional_attributes></element><element><id>Relation</id><coordinates><x>169</x><y>280</y><w>60</w><h>60</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;40;40;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>60</x><y>160</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element></diagram>

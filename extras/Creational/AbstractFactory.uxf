@@ -1,0 +1,71 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - Each product interface or abstract class defines the set of operations that a Product of a determined family can do.
+
+2 - Each variant of a determined Product must follow it's respective interace but can have it's on implementation.
+
+3 - The AbstractFactory class defines only the methods for crating each respective variant of a Product.
+
+4 - Each Factory can produce only ine variant of each Product.
+
+5 -  There's lots of ways that the client can utilize the factories, it can work with only one factory passed by it's constructor, or it can have methods for changing the factory utilized or it can creaye one instance of every factory etc...</help_text><element><id>UMLClass</id><coordinates><x>0</x><y>280</y><w>110</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ProductA
+--
++ action(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>280</y><w>110</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+ProductB
+--
++ do(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>400</y><w>110</w><h>70</h></coordinates><panel_attributes>ProductA1
+--
+...
+--
++ action(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>400</y><w>110</w><h>70</h></coordinates><panel_attributes>ProductB1
+--
+...
+--
++ do(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>160</y><w>110</w><h>70</h></coordinates><panel_attributes>ProductA2
+--
+...
+--
++ action(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>160</y><w>110</w><h>70</h></coordinates><panel_attributes>ProductB2
+--
+...
+--
++ do(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>220</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>220</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>340</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>340</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>270</y><w>180</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+AbstractFactory
+--
++ createProductA(): ProductA
++ createProductB(): ProductB</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>110</y><w>180</w><h>80</h></coordinates><panel_attributes>Factory2
+--
+...
+--
++ createProductA(): ProductA2
++ createProductB(): ProductB2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>430</y><w>180</w><h>80</h></coordinates><panel_attributes>Factory1
+--
+...
+--
++ createProductA(): ProductA1
++ createProductB(): ProductB1</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>340</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>180</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>40</x><y>120</y><w>280</w><h>60</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;40;10;10;260;10</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>120</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>40</x><y>460</y><w>280</w><h>60</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;40;260;40</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>460</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>260</y><w>190</w><h>90</h></coordinates><panel_attributes>Client
+--
+- factory: AbstractFactory
+--
++ Client(factory: AbstractFactory)
++ someOperation(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>470</x><y>300</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>100</x><y>280</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>100</x><y>150</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>100</x><y>390</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>460</x><y>250</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>460</x><y>100</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>460</x><y>420</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>706</x><y>250</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+5</panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -1,0 +1,13 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Singleton's constructor should be hidden from the Client code. Calling the static method getInstance should be the only way of getting the Singleton object.</help_text><element><id>UMLClass</id><coordinates><x>270</x><y>210</y><w>160</w><h>100</h></coordinates><panel_attributes>Singleton
+--
+_- instance: Singleton_
+--
+- Singleton()
+_+ getInstance(): Singleton_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>230</y><w>60</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;40;10;40;50;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>270</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>270</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>260</x><y>330</y><w>200</w><h>90</h></coordinates><panel_attributes>if (this.instance == null) {
+    this.instance = new Singleton()
+}
+
+return this.instance</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>340</x><y>280</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>450</x><y>290</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element></diagram>

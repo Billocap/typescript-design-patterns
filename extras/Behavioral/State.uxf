@@ -1,0 +1,58 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The changes to the context inner values or action to be performed are delegated to it's State objects.
+
+2 - The state interface declares a collection of all the method the concrete states have.
+
+3 - The Concrete States are respossible for the actions of the Context object, they can also have a reference for the context itself.
+
+4 - Both State and Context can be respossible for changing and relinking States and Context.</help_text><element><id>UMLClass</id><coordinates><x>490</x><y>120</y><w>110</w><h>90</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+State
+--
++ doThis(): void
++ doThat(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>190</x><y>100</y><w>200</w><h>130</h></coordinates><panel_attributes>Context
+--
+- state: State
+--
++ Context(initialState: State)
++ changeState(state: State): void
++ doThis(): void
++ doThat(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>160</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>300</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>220</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>280</y><w>180</w><h>110</h></coordinates><panel_attributes>layer=1
+bg=#282A36
+transparency=0
+group=1
+ConcreteStates
+--
+- context: Context
+--
++ setContext(context: Context)
++ doThis(): void
++ doThat(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>200</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>290</y><w>180</w><h>110</h></coordinates><panel_attributes>group=1
+ConcreteStates
+--
+- context: Context
+--
++ setContext(context: Context)
++ doThis(): void
++ doThat(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>300</y><w>150</w><h>30</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>130;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>200</y><w>120</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;100;80</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>170</x><y>80</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>580</x><y>130</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>630</x><y>260</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=3
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>410</x><y>430</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>180</y><w>160</w><h>50</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+this.state = state
+this.state.setContext(this)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>29</x><y>140</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;40;10;10;160;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>140</x><y>260</y><w>130</w><h>30</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+this.state.doThis()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>199</x><y>170</y><w>160</w><h>110</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;90;10;50;140;50;140;10;90;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>180</x><y>410</y><w>210</w><h>80</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+initialState = new ConcreteState()
+context = new Context(initialState)
+context.doThis()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>279</x><y>320</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLNote</id><coordinates><x>460</x><y>410</y><w>210</w><h>80</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+state = new OtherState()
+context.changeState(state)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>499</x><y>380</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element></diagram>

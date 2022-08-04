@@ -1,0 +1,29 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Facade class gives the Client class access to the functionalities of the subsystem.
+
+2 - The functonalities of a Facade can be split into two classes to avoid making it to long.
+
+3 - The subsystem is collection of classes that needed to be group together in a easy to access way.
+
+4 - The Client uses the Facade instead of the subsystem.</help_text><element><id>UMLClass</id><coordinates><x>50</x><y>210</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>190</x><y>180</y><w>180</w><h>90</h></coordinates><panel_attributes>Facade
+--
+- linksToSubsystemObjects
+- optionalAditionalFacade
+--
++ subsystemOperation(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>210</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>190</y><w>160</w><h>70</h></coordinates><panel_attributes>AdditionalFacade
+--
+...
+--
++ anotherOperation(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>210</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>290</x><y>350</y><w>130</w><h>40</h></coordinates><panel_attributes>fontsize=24
+Subsystem</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>220</x><y>260</y><w>90</w><h>120</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>70;100;20;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>260</y><w>60</w><h>110</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>40;90;20;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>260</y><w>40</w><h>110</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>20;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>250</y><w>80</w><h>120</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;100;50;60;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>250</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;120;80;70;90;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>170</x><y>160</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>550</x><y>180</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>420</x><y>380</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>30</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element></diagram>

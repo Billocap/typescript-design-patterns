@@ -1,0 +1,51 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - Defines a collection of features the Client can use, these fatures depends on the implementations the Abstraction lists.
+
+2 - Defines a commom Interface for all Implementations, the Abstraction can implement these same methods or new ones based on the methods declare by this Interface.
+
+3 - The Implementations must follow the same interface but can implement the methods in it's own way.
+
+4 - Abstractions can be refined ofering more features with different Implementations.
+
+5 - The Client is respossible for linking the Implementation with thw Abstration be throught it's constructor or by a special method. but the client is the one who must create the two objects.</help_text><element><id>UMLClass</id><coordinates><x>210</x><y>220</y><w>120</w><h>90</h></coordinates><panel_attributes>Abstraction
+--
+- i: Implementation
+--
++ feature1(): void
++ feature2(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>210</y><w>120</w><h>100</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Implementation
+--
+ + method1(): void
+ + method2(): void
+ + method3(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>260</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>410</x><y>360</y><w>100</w><h>30</h></coordinates><panel_attributes>transparency=0
+layer=1
+group=0
+bg=#282A36
+Implementation1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>380</y><w>100</w><h>30</h></coordinates><panel_attributes>layer=0
+group=0
+Implementation2
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>300</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>360</y><w>140</w><h>70</h></coordinates><panel_attributes>Refined
+--
+...
+--
++ featureN(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>140</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>160</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>300</y><w>80</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-
+/(Optional)/</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>260</y><w>90</w><h>60</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;70;40</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>180</y><w>410</w><h>170</h></coordinates><panel_attributes>lt=..
+fg=pink
+Bridge</panel_attributes><additional_attributes>10;10;360;10;360;150;10;150;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>350</x><y>140</y><w>160</w><h>30</h></coordinates><panel_attributes>this.abstraction.feature1()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>140</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>70</x><y>240</y><w>100</w><h>30</h></coordinates><panel_attributes>this.i.method1()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>250</y><w>80</w><h>40</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;60;20</additional_attributes></element><element><id>UMLNote</id><coordinates><x>70</x><y>290</y><w>100</w><h>40</h></coordinates><panel_attributes>this.i.method2()
+this.i.method3()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>280</y><w>70</w><h>50</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;30;50;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>70</x><y>390</y><w>100</w><h>40</h></coordinates><panel_attributes>this.i.methodN()
+this.i.methodM()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>400</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;40;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>190</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>500</x><y>190</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>380</x><y>370</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=3
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>320</x><y>350</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>200</x><y>120</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+5</panel_attributes><additional_attributes></additional_attributes></element></diagram>

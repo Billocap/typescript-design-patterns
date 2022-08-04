@@ -1,0 +1,62 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The builder interface declare the commom building steps for all Builders.
+
+2 - Each Builder may produce a different Product but all the builders must follow the same interface.
+
+3 - The Products created by a Builder don't need to follow the same interface or to be related.
+
+4 - The Director class encapsulate the builders and make it easier for building each product.
+
+5 - In case a director is used the Client must associate a builder with the director, this process can be done in serveral ways be it by the Directors construtor or direct into the director make method etc...</help_text><element><id>UMLClass</id><coordinates><x>170</x><y>220</y><w>100</w><h>120</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Builder
+--
++ reset(): void
++ stepA(): void
++ stepB(): void
++ stepC(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>80</x><y>390</y><w>140</w><h>130</h></coordinates><panel_attributes>Builder1
+--
+- result: Product1
+--
++ reset(): void
++ stepA(): void
++ stepB(): void
++ stepC(): void
++ getResult(): Product1</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>360</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;30;10;10;150;10;150;30</additional_attributes></element><element><id>Relation</id><coordinates><x>211</x><y>330</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLClass</id><coordinates><x>231</x><y>390</y><w>140</w><h>130</h></coordinates><panel_attributes>Builder2
+--
+- result: Product1
+--
++ reset(): void
++ stepA(): void
++ stepB(): void
++ stepC(): void
++ getResult(): Product2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>101</x><y>560</y><w>100</w><h>30</h></coordinates><panel_attributes>Product1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>251</x><y>560</y><w>100</w><h>30</h></coordinates><panel_attributes>Product2</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>291</x><y>510</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>510</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>220</y><w>220</w><h>110</h></coordinates><panel_attributes>Director
+--
+- builder: Builder
+--
++ Director(builder: Builder)
++ changeBuilder(builder: Builder): void
++ make(type: string): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>280</y><w>130</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>400</x><y>350</y><w>140</w><h>120</h></coordinates><panel_attributes>this.builder.reset()
+if (type == "simple") {
+    this.builder.stepA()
+} else {
+    this.builder.stepB()
+    this.builder.stepC()
+}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>300</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>150</x><y>200</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>260</x><y>160</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>170</y><w>160</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;50;140;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>170</y><w>180</w><h>240</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;220;10;10;160;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>190</x><y>40</y><w>240</w><h>100</h></coordinates><panel_attributes>this.builder = new Builder1()
+this.director = new Director()
+
+this.director.make()
+Product product = this.builder.getResult()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>130</y><w>30</w><h>50</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;30</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>200</x><y>370</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>210</x><y>550</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>560</x><y>210</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>400</x><y>50</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+5</panel_attributes><additional_attributes></additional_attributes></element></diagram>

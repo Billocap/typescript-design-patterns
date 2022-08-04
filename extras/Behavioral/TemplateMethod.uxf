@@ -1,0 +1,38 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Abstract declares the template method and also some of the methods tha must be called during the execution of the method.
+
+2 - Each Concrete Class ovirrides the abstract methods defined by the AbstractClass.</help_text><element><id>UMLClass</id><coordinates><x>230</x><y>130</y><w>140</w><h>140</h></coordinates><panel_attributes>/AbstractClass/
+--
+...
+--
++ templateMethod()
++ step1()
++ step2()
+/+ step3()/
+/+ step4()/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>340</y><w>140</w><h>90</h></coordinates><panel_attributes>ConcreteClass1
+--
+...
+--
++ step3()
++ step4()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>330</y><w>140</w><h>120</h></coordinates><panel_attributes>ConcreteClass2
+--
+...
+--
++ step1()
++ step2()
++ step3()
++ step4()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>280</y><w>250</w><h>80</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;60;10;20;230;20;230;50</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>260</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLNote</id><coordinates><x>420</x><y>120</y><w>110</w><h>120</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+layer=1
+this.step1()
+
+if (this.step2()) {
+    this.step3()
+} else {
+    this.step4()
+}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>170</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>210</x><y>110</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>280</x><y>370</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element></diagram>

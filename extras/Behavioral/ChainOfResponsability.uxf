@@ -1,0 +1,56 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - The Handler interface defines the common methods for all members of the chain.
+
+2 - The BaseHandler can be either a class or interface and it defines the basic behavior of a handler and also includes a reference to the next handler on the chain.
+
+3 - Hendlers can also be refined throught inheritance,a lowing one handler to have more functionalties than the previous one.
+
+4 - The Client is resposible for creating the chain and sending the requests.</help_text><element><id>UMLClass</id><coordinates><x>110</x><y>200</y><w>180</w><h>80</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Handler
+--
++ setNext(next: Handler): void
++ handle(request): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>110</x><y>320</y><w>180</w><h>90</h></coordinates><panel_attributes>BaseHandler
+--
+# next: Handler
+--
++ setNext(next: Handler): void
++ handle(request): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>270</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>450</y><w>150</w><h>70</h></coordinates><panel_attributes>bg=#282A36
+transparency=0
+layer=1
+group=1
+Refined
+--
+...
+--
++ handle(request): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>400</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>370</x><y>230</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>240</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>250</y><w>60</w><h>150</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>40;130;10;130;10;10;40;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>340</x><y>50</y><w>150</w><h>150</h></coordinates><panel_attributes>h1 = new BaseHandler()
+h2 = new Refined()
+h3 = new BaseHandler()
+
+h1.setNext(h2)
+h2.setNext(h3)
+...
+
+h1.handle(request)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>190</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>UMLNote</id><coordinates><x>340</x><y>310</y><w>160</w><h>60</h></coordinates><panel_attributes>if (this.next != null) {
+    this.next.handle(request)
+}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>340</y><w>120</w><h>70</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;50;70;50;100;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>330</x><y>420</y><w>180</w><h>90</h></coordinates><panel_attributes>if (this.canHandleRequest()) {
+    ...
+} else {
+    super.handle(request)
+}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>460</y><w>90</w><h>60</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;40;50;40;70;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>90</x><y>180</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>100</x><y>300</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>120</x><y>430</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=2
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>450</x><y>210</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>140</x><y>460</y><w>150</w><h>70</h></coordinates><panel_attributes>layer=0
+group=1
+Refined
+--
+...
+--
++ handle(request): void</panel_attributes><additional_attributes></additional_attributes></element></diagram>

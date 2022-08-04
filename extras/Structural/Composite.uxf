@@ -1,0 +1,35 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>1 - Declares a commom interface for all Components of a tree.
+
+2 - Leafs are the end nodes that doesn't have no child node, Leafs are usually the objects that end up doing all the work.
+
+3 - The container (Composite) is a component that has sub components be they Leafs or other Composites, Conteiners delegate the work to their children.
+
+4 - The Client talks to the components throught the Component interface.</help_text><element><id>UMLClass</id><coordinates><x>220</x><y>110</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>180</y><w>100</w><h>70</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Component
+--
++ execute(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>130</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>330</y><w>100</w><h>80</h></coordinates><panel_attributes>Leaf
+--
+...
+--
++ execute(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>270</x><y>330</y><w>180</w><h>120</h></coordinates><panel_attributes>Composite
+--
+- children: Component[]
+--
++ add(c: Component): void
++ remove(c: Component): void
++ getChildren(): Component[]
++ execute(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>210</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-&gt;</panel_attributes><additional_attributes>90;120;90;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>290</y><w>180</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;40;10;10;160;10;160;40</additional_attributes></element><element><id>Relation</id><coordinates><x>260</x><y>240</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLNote</id><coordinates><x>140</x><y>430</y><w>110</w><h>30</h></coordinates><panel_attributes>Do some work...</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>380</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLNote</id><coordinates><x>260</x><y>470</y><w>180</w><h>70</h></coordinates><panel_attributes>this.children.forEach(child =&gt; {
+    child.execute()
+})</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>430</y><w>40</w><h>60</h></coordinates><panel_attributes>lt=..</panel_attributes><additional_attributes>10;10;20;40</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>200</x><y>240</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>120</x><y>310</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>430</x><y>320</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>300</x><y>90</y><w>40</w><h>40</h></coordinates><panel_attributes>bg=black
+transparency=0
+layer=0
+4</panel_attributes><additional_attributes></additional_attributes></element></diagram>
